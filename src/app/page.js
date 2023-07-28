@@ -14,7 +14,7 @@ export default function Home() {
       sala: sala,
     };
 
-    const response = await fetch("http://localhost:5000", {
+    const response = await fetch("https://experimento-1-thandem-nw5g.vercel.app/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -25,7 +25,7 @@ export default function Home() {
     console.log(responseData);
     if (responseData.status == "ok") {
       window.localStorage.setItem("accessToken", responseData.token);
-      window.location.href = responseData.redirectUrl;
+      window.location.href = 'https://experimento-1-thandem-yh22-8a9xw0ad2-20181020076.vercel.app/components';
     }
   };
 
