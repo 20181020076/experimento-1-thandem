@@ -4,7 +4,7 @@ import { io } from "socket.io-client";
 import jwt from "jsonwebtoken";
 
 const GlobalStateContext = createContext();
-const socket = io("http://localhost:5000");
+const socket = io("https://experimento-1-thandem-nw5g.vercel.app/");
 
 const planesTest = [
   {
@@ -107,7 +107,7 @@ const GlobalStateProvider = ({ children }) => {
       planes: idPlanes,
     };
 
-    socket.emit("send-message", messageModel);
+    socket.emit("chatMessage", messageModel);
     setInputState(false);
     setPlanesLiked([]);
     setPlanesDontLiked([]);
@@ -120,7 +120,6 @@ const GlobalStateProvider = ({ children }) => {
     <GlobalStateContext.Provider
       value={{
         userName,
-
         validationToken,
         setValidationToken,
         socket,

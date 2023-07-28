@@ -6,9 +6,10 @@ const SelecionaZona = () => {
       <div className="w-[80%] flex flex-col ">
         <h1 className="text-center font-bold text-2xl">Selecciona una Zona</h1>
         <div className="flex flex-col gap-5 mt-6">
-          {zonas.map((zona) => {
+          {zonas.map((zona,index) => {
             return (
               <Link
+              key={index}
                 href={`/${zona}`}
                 className="w-full h-[200px] bg-white flex justify-center items-center rounded-xl"
               >

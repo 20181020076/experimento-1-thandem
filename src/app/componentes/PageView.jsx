@@ -16,20 +16,27 @@ const PageView = () => {
     handleSession,
     socket,
     messages,
-    setMessages
+    setMessages,
+    sala
   } = useContext(GlobalStateContext);
   useEffect(() => {
     handleSession();
-    socket.on("connection");
-    socket.on("chat_message",(data)=>{
-      setMessages(messages=>[...messages,data])
-    })
+    console.log("vea la sala: ",sala)
+    socket.emit('JoinRoom',{room:sala})
+    socket.on('newUser',(res)=>console.log(res))
+    
     return () => {
       socket.off("connection");
-      socket.off("chat_message");
+      socket.off("chatMessage");
+      socket.off("JoinRoom");
+      socket.off("newUser");
+
+    
+
+
 
     };
-  }, [messages]);
+  }, []);
  
   //   useEffect(() => {
   //     if (messagesEndRef.current) {
