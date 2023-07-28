@@ -1,0 +1,26 @@
+{
+  "name": "experimento-1",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "autoprefixer": "10.4.14",
+    "bufferutil": "^4.0.7",
+    "eslint": "8.45.0",
+    "eslint-config-next": "13.4.11",
+    "jsonwebtoken": "^8.5.1",
+    "next": "13.4.11",
+    "next-auth": "^4.22.3",
+    "postcss": "8.4.27",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "socket.io-client": "^4.7.1",
+    "tailwindcss": "3.3.3",
+    "utf-8-validate": "^5.0.10"
+  }
+}
